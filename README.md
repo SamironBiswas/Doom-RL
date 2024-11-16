@@ -1,116 +1,52 @@
 # Playing Doom using Deep Reinforcement Learning
 
-In this project, we use deep learning to teach an agent to play the classic first person shooter game Doom.
+This project displays the use of deep learning to teach an agent to play the classic first person shooter game Doom.
 
 # Overview
-The 
 
+Doom is one of the most iconic first-person shooter games, offering a dynamic and challenging environment for artificial intelligence experimentation. In this project, we use deep reinforcement learning to teach an AI agent to play the basic map of Doom. The agent learns to navigate and react to the environment, with the primary objective being to shoot the monster as fast as possible.
 
-# Agents Workflow
-- The agent start from at the bottom-right corner of the Grid
-- The goal is the agent have to reach to Bottom-right corener.
-- Utilizing the given Reinfrocement Learning, the agent will be able to guide it's way through it. 
+# The Environment
+
+State Space: The model receives a snapshot of the current game state as input, represented by the raw pixel data visible to the player. These inputs are typically RGB frames, capturing the visual information needed for decision-making.
+
+Action Space: There are only 3 basic actions - Move left, move right, shoot. To keep things simple, only one action will be taken at a time.
+
+Rewards: The agent is deducted points for taking actions without results, such as unnecessary strafing and reckless shooting. It is rewarded heavily for shooting the target.
 
 # Requirements
 - Python 3.x (or Greater)
 - [OpenAi Gym]([https://gymnasium.farama.org/])
-- [Minigrid]([https://github.com/MAN1986/pyamaze/blob/main/pyamaze/pyamaze.py](https://minigrid.farama.org/environments/minigrid/EmptyEnv/))
+- [ViZDoom](https://github.com/Farama-Foundation/ViZDoom/tree/master)
 
 # Installation 
 - Install OpenAi Gym
-  ``` bash
-  git clone https://github.com/openai/gym 
+   ``` bash
+   git clone https://github.com/openai/gym 
 -  Clone the Repository:
    ``` bash  
-     git clone https://github.com/AJ-SM/IV_Tasks/tree/main/Mini_Grid)](https://github.com/AJ-SM/IV_Tasks/tree/main/Mini_Grid
+   git clone https://github.com/AJ-SM/IV_Tasks/tree/main/Mini_Grid)](https://github.com/AJ-SM/IV_Tasks/tree/main/Mini_Grid
 
 # Working
 
-# Monte_Carlo 
-Monte Carlo methods are ways of solving the reinforcement learning problem based on averaging sample returns. To ensure that well-defined returns are available, here we define Monte Carlo methods only for episodic tasks.
+The training process for this project involves initializing a custom environment using OpenAI Gym's framework, which is specifically designed for reinforcement learning tasks. The custom environment is based on the classic game Doom and integrates seamlessly with the reinforcement learning algorithms provided by the Stable-Baselines3 library.
 
-  
-  
-- ![Monte-Calro](https://github.com/user-attachments/assets/603fdba1-10e8-4d3c-a970-c11cad6f7f1a)
+Environment Initialization
+The Doom environment is initialized through a custom implementation (CustomEnv) that defines the game's state space, action space, and reward structure. The state space consists of raw pixel data (RGB frames), which captures the visual game state as seen by the player. The agent interacts with the environment by taking actions (e.g., shooting), and it receives rewards based on its performance, such as successfully hitting a target.
 
+Training Procedure
+The training process employs the Proximal Policy Optimization (PPO) algorithm from Stable-Baselines3. The key steps are as follows:
 
+Environment Setup:
+The environment is instantiated, and necessary directories for saving models and logging data are created (MODELS/PPO for saving trained models and logs for TensorBoard monitoring).
 
+Model Initialization:
+A PPO model with the MlpPolicy policy is initialized. The MlpPolicy uses a multi-layer perceptron to process the input state and make decisions.
 
+Training Loop:
+The training is conducted in a loop, where the model learns from the environment in increments of TIMESTEPS (e.g., 10,000 timesteps per iteration). After every iteration:
 
-
-# Q_Learnings
-Q-learning is a model-free reinforcement learning algorithm used to find the optimal action-selection policy in a given environment. It works by learning a quality function (Q-value) that estimates the expected future rewards for an agent taking an action in a particular state, and then following the best policy based on these learned values.
-
-  
-![Q_learnings](https://github.com/user-attachments/assets/2946626c-9287-4ff7-9e18-9612318141ac)
-
-
-
-# SARSA 
-SARSA (State-Action-Reward-State-Action) is an on-policy reinforcement learning algorithm used to learn the optimal policy for a given environment by updating a value function based on the action taken and the resulting state-action pair.
-
-
-
- ![Screenshot 2024-10-13 212957](https://github.com/user-attachments/assets/85c23475-8cd4-4f3f-9815-86e7f434e05e)
- 
-
-
-
-# SARSA_(λ) 
-SARSA(λ) is an extension of the SARSA algorithm that incorporates eligibility traces, allowing it to learn from multiple time steps of experience at once. This combination of SARSA and eligibility traces enables faster learning and more efficient use of past experiences compared to the standard SARSA.
-
-
-![Sarsa(lambda)](https://github.com/user-attachments/assets/9b1b7c11-82e6-4a4a-bc81-f6ceb0a92370)
-
-
-
-
-# Graphs_Output
-The output Graphs Are As Folows: 
-- **Monte Carlo** :
-
-  
-![Grid_Result](https://github.com/user-attachments/assets/ce46e792-3d31-4981-8736-724ad59d49ae)
-
-
-
-![Gride_stepos](https://github.com/user-attachments/assets/b4fac024-a033-48b7-9b28-68aed377f3c7)
-
-
-  
-- Q-Learning :
-
-
-
-![rewardepisodeQlearning](https://github.com/user-attachments/assets/0bc2e8ae-6a56-4e0f-868a-7d58383c14b6)
-
-
-
-
-![Qlearning_epsvsrw](https://github.com/user-attachments/assets/8d26f46e-3ef1-47e0-a4b8-2dab733a822a)
-
-
-
-
-  
-- SARSA :
-
-
-
-
-![Screenshot 2024-08-29 135911](https://github.com/user-attachments/assets/265fb1a4-de36-441e-882a-672be254ba03)
-
-
-
-![Screenshot 2024-08-29 135859](https://github.com/user-attachments/assets/977cc9b9-521a-45f8-8a69-1ca527159f66)
-
-
-
-  
-- SARSA (λ) : 
-
-![Sarsa_lambdas](https://github.com/user-attachments/assets/9d42bdb8-7f71-4907-b9fc-026fc38c2005)
-
-
-
-![Sarsa_Lambda](https://github.com/user-attachments/assets/4d231748-8109-456e-b674-0700d35169d3)
+The model is updated based on the collected experience.
+The model is saved periodically for backup and future use.
+Progress Monitoring:
+Training metrics such as mean episodic length and mean episodic rewards are logged using TensorBoard. This provides a visual representation of the model's performance and allows for easy monitoring of its progress over time.
