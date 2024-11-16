@@ -50,3 +50,10 @@ The model is updated based on the collected experience.
 The model is saved periodically for backup and future use.
 Progress Monitoring:
 Training metrics such as mean episodic length and mean episodic rewards are logged using TensorBoard. This provides a visual representation of the model's performance and allows for easy monitoring of its progress over time.
+
+# Results
+
+Below is a demonstration of our trained model in action.
+
+
+The results of training are as shown.
