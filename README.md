@@ -55,5 +55,16 @@ Training metrics such as mean episodic length and mean episodic rewards are logg
 
 Below is a demonstration of our trained model in action.
 
+https://github.com/user-attachments/assets/3f0943eb-a79a-4a28-95a9-fabc5494f044
+
+
 
 The results of training are as shown.
+
+Increase in rewards as the agent learns:
+![image](https://github.com/user-attachments/assets/51c77a2d-f094-43be-8c36-d53e5854bb8d)
+
+Decrease in length of each episode as the agent learns:
+![image](https://github.com/user-attachments/assets/36a6916d-47c2-48c7-a679-af54dbc03e9f)
+
+
