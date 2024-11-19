@@ -54,6 +54,7 @@ Training metrics such as mean episodic length and mean episodic rewards are logg
 # Results
 
 Below is a demonstration of our trained model in action.
+
 ![ezgif-2-f7795e15b4](https://github.com/user-attachments/assets/b6b6379d-cf9b-4dd3-812c-f5236a622d3f)
 
 
