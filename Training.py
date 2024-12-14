@@ -3,7 +3,7 @@ from stable_baselines3 import PPO
 import numpy as np
 import gym
 import random
-from env import CustomEnv 
+import CustomEnv 
 
 import time 
 import os 
