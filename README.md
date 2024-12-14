@@ -25,7 +25,7 @@ Rewards: The agent is deducted points for taking actions without results, such a
    git clone https://github.com/openai/gym 
 -  Clone the Repository:
    ``` bash  
-   git clone https://github.com/AJ-SM/IV_Tasks/tree/main/Mini_Grid)](https://github.com/AJ-SM/IV_Tasks/tree/main/Mini_Grid
+   git clone https://github.com/SamironBiswas/Doom-RL.git 
 
 # Working
 
