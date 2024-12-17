@@ -28,8 +28,15 @@ Note: If modelled on Windows OS
 
 2. Add a new value to the Environment Variable PATH: C:\Program Files (x86)\Windows Kits\10\bin\x64
 
-3. Copy the file rc.exe & rcdll.dll from C:\Program Files (x86)\Windows Kits\10\bin\10.0.20348.0\x64 to C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin
-4. 
+3. Copy the file rc.exe & rcdll.dll from
+  ```bash
+   C:\Program Files (x86)\Windows Kits\10\bin\10.0.20348.0\x64
+  ```
+  to
+  ```bash
+   C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin
+  ```
+
 # Installation 
 - Install OpenAi Gym
    ``` bash
