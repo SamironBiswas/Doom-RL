@@ -18,7 +18,18 @@ Rewards: The agent is deducted points for taking actions without results, such a
 - Python 3.x (or Greater)
 - [OpenAi Gym]([https://gymnasium.farama.org/])
 - [ViZDoom](https://github.com/Farama-Foundation/ViZDoom/tree/master)
+  
+Note: If modelled on Windows OS
+- Python under 3.12.1 (3.11.8 recommended)
+- Numpy under 2.0.0 (1.26.0 recommended)
+- Download and run C++ Build Tools: https://visualstudio.microsoft.com/visual-cpp-build-tools/ ; then:
 
+1. Open and select tab Individual Components and install MSVC - v140 VS2015 C++ Build Tools (v14.00) and also Windows 10 SDK, eg 10.0.20348.0
+
+2. Add a new value to the Environment Variable PATH: C:\Program Files (x86)\Windows Kits\10\bin\x64
+
+3. Copy the file rc.exe & rcdll.dll from C:\Program Files (x86)\Windows Kits\10\bin\10.0.20348.0\x64 to C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin
+4. 
 # Installation 
 - Install OpenAi Gym
    ``` bash
